@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Stats preview card component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Stats preview card component</title>
 
-  Get insights that help your business grow.
+    <link
+      rel="preload"
+      href="./fonts/inter-v19-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/inter-v19-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/lexend-deca-v24-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="visually-hidden">Sample Stats Preview Card Component</h1>
+      <section class="stats" aria-labelledby="stats-title">
+        <picture class="stats__img-container">
+          <source
+            srcset="./images/image-header-desktop.jpg"
+            media="(min-width: 48em)"
+          />
+          <img
+            class="stats__img"
+            src="./images/image-header-mobile.jpg"
+            width="654"
+            height="480"
+            role="presentation"
+            aria-hidden="true"
+            alt=""
+          />
+        </picture>
 
-  10k+ companies
-  314 templates
-  12m+ queries
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <div class="stats__text-container">
+          <h2 id="stats-title" class="stats__title">
+            Get <span class="stats__title-highlight">insights</span> that help
+            your business grow.
+          </h2>
+          <p class="stats__description">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+          <dl class="stats__data">
+            <div class="stats__column">
+              <dt class="stats__heading">companies</dt>
+              <dd class="stats__value">10k+</dd>
+            </div>
+            <div class="stats__column">
+              <dt class="stats__heading">templates</dt>
+              <dd class="stats__value">314</dd>
+            </div>
+            <div class="stats__column">
+              <dt class="stats__heading">queries</dt>
+              <dd class="stats__value">12M+</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

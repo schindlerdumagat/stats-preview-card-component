@@ -1,0 +1,224 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.65;
+}
+
+h1,
+h2 {
+  line-height: 1.25; /* Set shorter line heights on headings and interactive elements */
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-inline-size: 100%;
+  display: block;
+}
+
+/* For screen reader purposes */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); /* Legacy property for Internet Explorer */
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* FONTS */
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lexend-deca-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/lexend-deca-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+  /* COLORS */
+
+  --clr-white: #ffffff;
+  --clr-navy: #0a0c1c;
+  --clr-blue: #1b1937;
+  --clr-purple: #ab5cdb;
+
+  /* TYPOGRAPHY */
+
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Lexend Deca", sans-serif;
+  --fs-body: 0.938rem;
+
+  /* SPACINGS */
+
+  --space-0: 0;
+  --space-100: 0.5rem;
+  --space-300: 1.5rem;
+  --space-400: 2rem;
+  --space-500: 2.5rem;
+  --space-800: 4rem;
+  --space-900: 4.5rem;
+  --space-1000: 5rem;
+
+  /* BORDER RADIUS */
+
+  --rounded-sm: 8px;
+}
+
+body {
+  background-color: var(--clr-navy);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--space-300) + 8.9vw) var(--space-300);
+}
+
+.stats {
+  background-color: var(--clr-blue);
+  border-radius: var(--rounded-sm);
+  overflow: hidden;
+  max-inline-size: 35.25rem;
+}
+
+.stats__img-container {
+  background: var(--clr-purple);
+}
+
+.stats__img {
+  mix-blend-mode: multiply;
+  opacity: 0.7511;
+  background-color: var(--clr-purple);
+  max-height: clamp(15rem, 2.9532rem + 51.3995vw, 27.625rem);
+  height: 100%;
+}
+
+.stats__text-container {
+  text-align: center;
+  padding: clamp(var(--space-300), -0.8855rem + 10.1781vw, var(--space-800))
+    clamp(var(--space-400), -0.8626rem + 12.2137vw, var(--space-900));
+}
+
+.stats__title {
+  font-size: clamp(1.75rem, 1.2729rem + 2.0356vw, 2.25rem);
+  font-weight: bold;
+  margin-block-end: clamp(var(--space-100), -0.4542rem + 4.0712vw, var(--space-300));
+}
+
+.stats__title-highlight {
+  color: var(--clr-purple);
+}
+
+.stats__description {
+  opacity: 0.75;
+  margin-block-end: clamp(var(--space-500), 0.5916rem + 8.1425vw, var(--space-900));
+}
+
+.stats__data {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-400), 0.0916rem + 8.1425vw, var(--space-800));
+}
+
+.stats__column {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.stats__heading {
+  font-family: var(--ff-secondary);
+  font-size: 0.75rem;
+  line-height: 2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.stats__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 48em) {
+
+  .stats__text-container {
+    text-align: start;
+  }
+  
+  .stats__data {
+    flex-direction: row;
+  }
+
+}
+
+
+@media screen and (min-width: 64em) {
+  
+  .stats {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: clamp(55.5rem, 43.1923rem + 19.2308vw, 60.5rem);
+  }
+
+  .stats > * {
+    width: 100%;
+  }
+
+  .stats__img {
+    max-height: none;
+  }
+}
